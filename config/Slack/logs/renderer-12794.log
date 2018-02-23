@@ -1,0 +1,88 @@
+[02/22/18, 00:40:39:167] info: ╔═════════════════════════════════════════════════════════════════════════════╗
+[02/22/18, 00:40:39:170] info: ║      Slack 3.0.5, linux 4.15.3-2-ARCH on x64 at 02/22/18, 00:40:39:156      ║
+[02/22/18, 00:40:39:170] info: ╚═════════════════════════════════════════════════════════════════════════════╝
+[02/22/18, 00:40:39:586] info: Initializing local storage instance at path: /home/thecsw/.config/Slack/local-settings.json
+[02/22/18, 00:40:40:582] error: Calls failed to load, bailing
+[02/22/18, 00:40:40:592] info: updateSuspendResume: true
+[02/22/18, 00:40:40:593] warn: updateSpellcheckerLanguage: Tried to update language, but spellchecker not initialized
+[02/22/18, 00:40:54:879] info: Store: UPSERT_WEB_CONTENTS
+{
+  "id": 3,
+  "state": "loaded",
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:40:55:171] info: Store: UPDATE_SESSION_STATUS
+{
+  "hasValidSession": true,
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:40:58:036] error: Feb-22 00:40:58.350 updateEndMarker no channel, no im, no group
+[02/22/18, 00:40:58:197] info: Store: UPDATE_TEAM_ICONS
+{
+  "icons": false,
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:41:00:668] info: Store: SELECT_CHANNEL D9CN729FE
+[02/22/18, 00:41:00:669] info: Store: UPDATE_TEAM_LOCALE
+{
+  "locale": "en-US",
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:41:00:674] info: Store: UPDATE_SETTINGS
+{
+  "locale": "en-US"
+}
+[02/22/18, 00:41:00:681] info: Store: UPDATE_TEAM_THEME
+{
+  "teamId": "T9CSC57CM",
+  "theme": {
+    "active_item": "#4C9689",
+    "active_item_text": "#FFFFFF",
+    "active_presence": "#38978D",
+    "badge": "#EB4D5C",
+    "column_bg": "#4D394B",
+    "hover_item": "#3E313C",
+    "menu_bg": "#3E313C",
+    "text_color": "#FFFFFF"
+  }
+}
+[02/22/18, 00:41:00:722] info: Store: SELECT_CHANNEL C9CNTGDJ6
+[02/22/18, 00:41:00:724] info: Store: UPSERT_WEB_CONTENTS
+{
+  "id": 3,
+  "state": "webapp-loaded",
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:41:00:868] info: Store: STORE_API_TOKEN
+{
+  "teamId": "T9CSC57CM",
+  "token": "xoxs-⋯"
+}
+[02/22/18, 00:41:05:321] info: Couldn't get hint text from messages in channel: Failed to fetch recent messages
+[02/22/18, 00:41:06:750] info: Couldn't get hint text from messages in channel: Failed to fetch recent messages
+[02/22/18, 00:41:13:201] info: Couldn't get hint text from messages in channel: Failed to fetch recent messages
+[02/22/18, 00:41:29:116] info: Store: SHOW_WEBAPP_DIALOG
+{
+  "dialogType": "prefs"
+}
+[02/22/18, 00:41:41:892] error: 2018/2/22 00:41:41.889 logging error: {"subtype":"api_call_error","message":"{\"ok\":false,\"error\":\"no_emailtoken\"}","stack":"Error\n    at Object.n [as logError] (https://a.slack-edge.com/bv1-1/rollup-core_required_ts.caaed7b181c6f69f2cb5.min.js:1:74606)\n    at e (https://a.slack-edge.com/bv1-1/rollup-secondary_a_required.946456a6388ef303e353.min.js:1:133602)\n    at e (https://a.slack-edge.com/bv1-1/rollup-secondary_a_required.946456a6388ef303e353.min.js:1:128799)\n    at e (https://a.slack-edge.com/bv1-1/rollup-secondary_a_required.946456a6388ef303e353.min.js:1:130394)\n    at XMLHttpRequest.d.onreadystatechange (https://a.slack-edge.com/bv1-1/rollup-secondary_a_required.946456a6388ef303e353.min.js:1:132092)"}
+[02/22/18, 00:41:49:211] info: Store: SELECT_CHANNEL D9CN729FE
+[02/22/18, 00:41:50:690] info: Store: SELECT_CHANNEL D9C6LVD09
+[02/22/18, 00:41:52:752] info: Store: SELECT_CHANNEL C9C6M00P3
+[02/22/18, 00:41:55:117] info: Couldn't get hint text from messages in channel: Failed to fetch recent messages
+[02/22/18, 00:41:56:681] info: Couldn't get hint text from messages in channel: Failed to fetch recent messages
+[02/22/18, 00:41:58:683] info: Couldn't get hint text from messages in channel: Failed to fetch recent messages
+[02/22/18, 00:42:00:670] info: Unloading spellchecker
+[02/22/18, 00:42:00:672] info: Store: UPDATE_SETTINGS
+{
+  "hasRunFromTray": true
+}
+[02/22/18, 00:42:00:675] info: Store: SHOW_TRAY_BALLOON
+{
+  "content": "Slack’s set to stay running in the notification area. To change this, visit Preferences > Linux App.",
+  "title": "Why didn’t Slack quit?"
+}
+[02/22/18, 00:42:00:696] info: Store: SET_FULL_SCREEN
+[02/22/18, 00:43:57:979] info: Store: QUIT_APP
+[02/22/18, 00:43:58:013] info: Store: REMOVE_WINDOW 2
+[02/22/18, 00:43:58:078] info: Store: QUIT_APP

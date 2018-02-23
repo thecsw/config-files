@@ -1,0 +1,117 @@
+[02/22/18, 00:35:52:584] info: ╔═════════════════════════════════════════════════════════════════════════════╗
+[02/22/18, 00:35:52:587] info: ║      Slack 3.0.5, linux 4.15.3-2-ARCH on x64 at 02/22/18, 00:35:52:570      ║
+[02/22/18, 00:35:52:587] info: ╚═════════════════════════════════════════════════════════════════════════════╝
+[02/22/18, 00:35:53:544] info: Initializing local storage instance at path: /home/thecsw/.config/Slack/local-settings.json
+[02/22/18, 00:35:55:464] info: Store: SET_NETWORK_STATUS online
+[02/22/18, 00:40:33:955] info: Store: ADD_NEW_TEAM
+{
+  "id": "U9DJD7886",
+  "name": "[REDACTED]",
+  "team_id": "T9CSC57CM",
+  "team_name": "[REDACTED]",
+  "team_url": "[REDACTED]"
+}
+[02/22/18, 00:40:34:032] info: Store: UPSERT_WEB_CONTENTS
+{
+  "id": 3,
+  "state": "unloaded",
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:40:34:217] info: Store: FOREGROUND_APP
+[02/22/18, 00:40:34:219] info: Store: MAIN_WINDOW_SHOWN
+[02/22/18, 00:40:35:156] info: Store: SAVE_WINDOW_SETTINGS
+{
+  "isMaximized": false,
+  "position": [
+    685,
+    18
+  ],
+  "size": [
+    679,
+    729
+  ]
+}
+[02/22/18, 00:40:39:834] info: Store: SAVE_WINDOW_SETTINGS
+{
+  "isMaximized": false,
+  "position": [
+    2,
+    18
+  ],
+  "size": [
+    1362,
+    729
+  ]
+}
+[02/22/18, 00:40:54:853] info: Store: UPSERT_WEB_CONTENTS
+{
+  "id": 3,
+  "state": "loaded",
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:40:55:172] info: Store: UPDATE_SESSION_STATUS
+{
+  "hasValidSession": true,
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:40:58:095] info: Store: UPDATE_TEAM_ICONS
+{
+  "icons": false,
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:40:59:286] info: Store: SELECT_CHANNEL D9CN729FE
+[02/22/18, 00:40:59:300] info: Store: UPDATE_TEAM_LOCALE
+{
+  "locale": "en-US",
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:40:59:317] info: Store: UPDATE_SETTINGS
+{
+  "locale": "en-US"
+}
+[02/22/18, 00:40:59:353] info: Store: UPDATE_TEAM_THEME
+{
+  "teamId": "T9CSC57CM",
+  "theme": {
+    "active_item": "#4C9689",
+    "active_item_text": "#FFFFFF",
+    "active_presence": "#38978D",
+    "badge": "#EB4D5C",
+    "column_bg": "#4D394B",
+    "hover_item": "#3E313C",
+    "menu_bg": "#3E313C",
+    "text_color": "#FFFFFF"
+  }
+}
+[02/22/18, 00:41:00:095] info: Store: SELECT_CHANNEL C9CNTGDJ6
+[02/22/18, 00:41:00:228] info: Store: UPSERT_WEB_CONTENTS
+{
+  "id": 3,
+  "state": "webapp-loaded",
+  "teamId": "T9CSC57CM"
+}
+[02/22/18, 00:41:00:747] info: Store: STORE_API_TOKEN
+{
+  "teamId": "T9CSC57CM",
+  "token": "xoxs-⋯"
+}
+[02/22/18, 00:41:29:116] info: Store: SHOW_WEBAPP_DIALOG
+{
+  "dialogType": "prefs"
+}
+[02/22/18, 00:41:49:111] info: Store: SELECT_CHANNEL D9CN729FE
+[02/22/18, 00:41:50:534] info: Store: SELECT_CHANNEL D9C6LVD09
+[02/22/18, 00:41:52:649] info: Store: SELECT_CHANNEL C9C6M00P3
+[02/22/18, 00:42:00:654] info: Store: UPDATE_SETTINGS
+{
+  "hasRunFromTray": true
+}
+[02/22/18, 00:42:00:660] info: Store: SHOW_TRAY_BALLOON
+{
+  "content": "Slack’s set to stay running in the notification area. To change this, visit Preferences > Linux App.",
+  "title": "Why didn’t Slack quit?"
+}
+[02/22/18, 00:42:00:696] info: Store: SET_FULL_SCREEN
+[02/22/18, 00:43:57:982] info: Store: QUIT_APP
+[02/22/18, 00:43:58:015] info: Store: REMOVE_WINDOW 2
+[02/22/18, 00:43:58:080] info: Store: QUIT_APP

@@ -1,0 +1,16 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+image/png=gpicview.desktop
+application/pdf=evince.desktop
+image/jpeg=gpicview.desktop
+text/plain=emacs.desktop
+
+[Added Associations]
+image/png=gpicview.desktop;
+application/pdf=evince.desktop;
+image/jpeg=gpicview.desktop;
+text/plain=emacs.desktop;
