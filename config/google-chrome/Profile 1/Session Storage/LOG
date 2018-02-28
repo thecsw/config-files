@@ -1,8 +1,0 @@
-2018/02/23-08:50:35.861 6628 Reusing MANIFEST /home/thecsw/.config/google-chrome/Profile 1/Session Storage/MANIFEST-000001
-2018/02/23-08:50:35.861 6628 Recovering log #14
-2018/02/23-08:50:35.863 6628 Level-0 table #17: started
-2018/02/23-08:50:35.868 6628 Level-0 table #17: 15514 bytes OK
-2018/02/23-08:50:35.868 6628 Recovering log #17
-2018/02/23-08:50:35.868 6628 Reusing old log /home/thecsw/.config/google-chrome/Profile 1/Session Storage/000017.log 
-2018/02/23-08:50:35.872 6628 Delete type=0 #14
-2018/02/23-08:50:35.873 6628 Delete type=2 #18
