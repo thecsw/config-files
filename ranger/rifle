@@ -1,0 +1,4 @@
+ext jpg = gpicview "$@"
+ext png = gpicview "$@"
+ext mp4 = mpv "$@"
+ext pdf = evince "$@"

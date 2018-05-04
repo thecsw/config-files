@@ -1,0 +1,6 @@
+if [ "$preview_images" = "True" ]; then
+	case "$mimetype" in
+		application/pdf)
+			evince-thumbnailer -s 400 "$path" "$cached" && exit 6;;
+	esac
+	fi
