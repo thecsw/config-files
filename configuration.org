@@ -15,8 +15,6 @@ from there.
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
-
-(package-check-signature nil)
 #+END_SRC
 
 * My emacs addons and so on
@@ -104,3 +102,4 @@ This is just a bunch of my preffered faces.
  ;; If there is more than one, they won't work right.
 )
 #+END_SRC
+  
