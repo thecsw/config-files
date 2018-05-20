@@ -1,0 +1,167 @@
+* MELPA
+
+This is the extended emacs package downloader and installer, can get everything
+from there.
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'package-archives
+     '("melpa" . "http://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For compatibility 
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+#+END_SRC
+
+* My emacs addons and so on
+** Flycheck is a good syntax checker
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'after-init-hook #'global-flycheck-mode)
+#+END_SRC
+   
+** Installed packages
+#+BEGIN_SRC emacs-lisp
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(font-use-system-font t)
+ '(org-hidden-keywords nil)
+ '(org-log-done (quote time))
+ '(package-selected-packages (quote (avy clang-format flycheck auctex))))
+#+END_SRC
+** Avy
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x C-a") 'avy-goto-char)
+#+END_SRC
+* Indentation and programming styles
+** C
+
+#+BEGIN_SRC emacs-lisp
+(setq-default c-basic-offset 8
+			  c-default-style "k&r"
+			  tab-width 8
+			  indent-tabs-mode t)
+#+END_SRC
+
+** Python
+
+#+BEGIN_SRC emacs-lisp
+(setq-default python-basic-offset 8
+			  tab-width 8
+			  indent-tabs-mode t)
+#+END_SRC
+
+** Save files and backups contol
+
+#+BEGIN_SRC emacs-lisp
+(setq backup-directory-alist `(("." . ".saves")))
+
+(setq delete-old-versions t
+	  kept-new-versions 6
+	  kept-old-versions 2
+	  version-control t)
+#+END_SRC
+
+* Emacs faces
+
+This is just a bunch of my preffered faces.
+
+#+BEGIN_SRC emacs-lisp
+(custom-set-variables
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(font-use-system-font t)
+ '(org-hidden-keywords nil)
+ '(org-log-done (quote time))
+
+'(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+ '(font-use-system-font t)
+ '(org-hidden-keywords nil)
+ '(org-log-done (quote time))
+ '(package-selected-packages (quote (clang-format flycheck auctex)))
+
+)
+
+
+(custom-set-faces
+ '(escape-glyph ((t (:foreground "brightred"))))
+ '(font-latex-sectioning-0-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-1-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-2-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-3-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-4-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-5-face ((t (:foreground "color-128" :weight bold))))
+ '(font-lock-comment-face ((t (:foreground "brightcyan"))))
+ '(font-lock-doc-face ((t (:foreground "color-128"))))
+ '(font-lock-string-face ((t (:foreground "brightgreen"))))
+ '(info-index-match ((t (:foreground "yellow"))))
+ '(next-error ((t (:foreground "brightyellow"))))
+ '(org-document-info ((t (:foreground "color-129"))))
+ '(org-document-title ((t (:foreground "color-129" :weight bold))))
+ '(region ((t (:background "color-17"))))
+
+'(escape-glyph ((t (:foreground "brightred"))))
+ '(font-latex-sectioning-0-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-1-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-2-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-3-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-4-face ((t (:foreground "color-128" :height 1.1))))
+ '(font-latex-sectioning-5-face ((t (:foreground "color-128" :weight bold))))
+ '(font-lock-comment-face ((t (:foreground "brightcyan"))))
+ '(font-lock-doc-face ((t (:foreground "color-128"))))
+ '(font-lock-string-face ((t (:foreground "brightgreen"))))
+ '(info-index-match ((t (:foreground "yellow"))))
+ '(next-error ((t (:foreground "brightyellow"))))
+ '(org-document-info ((t (:foreground "color-129"))))
+ '(org-document-title ((t (:foreground "color-129" :weight bold))))
+ '(region ((t (:background "color-17"))))
+
+)
+#+END_SRC
+
+* Org mode
+  
+** Auto newline after 80th column
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'org-mode-hook '(lambda () (setq fill-column 80)))
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+#+END_SRC
+
+** Minted
+
+#+BEGIN_SRC emacs-lisp
+
+#+END_SRC
+* Emacs variables
+  
+#+BEGIN_SRC emacs-lisp
+  (require 'org-ref)
+  (setq reftex-default-bibliography '("~/doc/latex/src/references.bib"))
+  (setq org-ref-default-bibliography '("~/doc/latex/src/references.bib"))
+
+  (setq org-latex-pdf-process
+        '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b %f"
+          "bibtex %b"
+          "makeindex %b"
+          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b %f"
+          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b %f"))
+
+  (setq org-latex-listings 'minted
+        org-latex-packages-alist '(("" "minted")))
+
+;;;;(setq linum-format "%d ")
+(setq linum-format "%4d \u2502 ")
+(global-linum-mode 1)
+#+END_SRC
