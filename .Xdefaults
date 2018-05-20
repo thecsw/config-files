@@ -1,21 +1,9 @@
 ! urxvt
-
-!URxvt*geometry:                115x40
 URxvt*geometry:                80x40
 
-URxvt.perl-ext-common: font-size
-
-!URxvt*font: xft:Liberation Mono:pixelsize=14:antialias=false:hinting=true
-!URxvt*font: xft:Inconsolata:pixelsize=17:antialias=true:hinting=true
-!URxvt*boldFont: xft:Inconsolata:bold:pixelsize=17:antialias=false:hinting=true
-!URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=14:antialias=false:hinting=true
+URxvt*font: xft:Inconsolata:pixelsize=17:antialias=true:hinting=true
 
 URxvt.secondaryScroll: 0
-
-URxvt*font: xft:Inconsolata for Powerline:pixelsize=17:antialias=true:hinting=true
-URxvt*boldFont: xft:Inconsolata for Powerline:bold:pixelsize=17:antialias=true:hinting=true
-
-!URxvt*font: xft:monospace:size=11
 
 URxvt*depth:                24
 URxvt*borderless: 	    1	    
@@ -24,24 +12,15 @@ URxvt*saveLines:  	    2000
 URxvt.transparent:	    true
 URxvt*.shading: 	    10
 
-urxvt*blurRadius: 	    2
+!urxvt*blurRadius: 	    2
 
 ! Meta modifier for keybindings
 !URxvt.modifier: super
 
+URxvt.perl-ext-common:  resize-font
+
 !! perl extensions
 URxvt.perl-ext:             default,url-select,clipboard
-
-! url-select (part of urxvt-perls package)
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.autocopy:  true
-URxvt.url-select.button:    2
-URxvt.url-select.launcher:  surf
-URxvt.url-select.underline: true
-
-! Nastavuje kopirovani
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 
 ! disable the stupid ctrl+shift 'feature'
 URxvt.iso14755: false
@@ -85,23 +64,3 @@ URxvt*color14 : #34E2E2
 ! white
 URxvt*color7  : #D3D7CF
 URxvt*color15 : #EEEEEC
-
-! Dracula Xresources palette
-!URxvt*.foreground: #F8F8F2
-!URxvt*.background: #282A36
-!URxvt*color0:     #000000
-!URxvt*color8:     #4D4D4D
-!URxvt*color1:     #FF5555
-!URxvt*color9:     #FF6E67
-!URxvt*color2:     #50FA7B
-!URxvt*color10:    #5AF78E
-!URxvt*color3:     #F1FA8C
-!URxvt*color11:    #F4F99D
-!URxvt*color4:     #BD93F9
-!URxvt*color12:    #CAA9FA
-!URxvt*color5:     #FF79C6
-!URxvt*color13:    #FF92D0
-!URxvt*color6:     #8BE9FD
-!URxvt*color14:    #9AEDFE
-!URxvt*color7:     #BFBFBF
-!URxvt*color15:    #E6E6E6
