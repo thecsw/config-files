@@ -16,10 +16,11 @@ eval $(thefuck --alias)
 alias em="emacsclient -nw"
 alias ems="emacs --daemon"
 alias emk="emacsclient -nw --eval '(kill-emacs)'"
+alias x="startx"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-figlet Hello There | lolcat
+#figlet Hello There | lolcat
 #powerline-daemon -q
 #. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
