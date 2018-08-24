@@ -38,6 +38,9 @@ bindsym $mod+t exec telegram-desktop
 bindsym $mod+g exec slack
 bindsym $mod+p exec scrot
 
+bindsym $mod+y exec "~/.local/bin/lock.sh"
+
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -92,6 +95,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# Switch to urgent window
+bindsym $mod+x [urgent=latest] focus
+
 # focus the parent container
 bindsym $mod+a focus parent
 
@@ -108,7 +114,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace 0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -120,7 +126,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace 0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -162,17 +168,18 @@ bindsym $mod+r mode "resize"
 # move floating windows with keys
 bindsym $mod+m mode "move" focus floating
 mode "move" {
+
     bindsym $mod+Tab focus right
 
-    bindsym Left  move left 10 px
-    bindsym Down  move down 10 px
-    bindsym Up    move up 10 px
-    bindsym Right move right 10 px
+    bindsym Left  move left 15 px
+    bindsym Down  move down 15 px
+    bindsym Up    move up 15 px
+    bindsym Right move right 15 px
 
-    bindsym h     move left 10 px 
-    bindsym j     move down 10 px 
-    bindsym k     move up 10 px 
-    bindsym l     move right 10 px 
+    bindsym h     move left 15 px 
+    bindsym j     move down 15 px 
+    bindsym k     move up 15 px 
+    bindsym l     move right 15 px 
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -181,16 +188,51 @@ mode "move" {
 
 
 
+# Set Xresources colors:
+set_from_resource $darkblack	color0  #000000
+set_from_resource $black	color8  #000000
+set_from_resource $darkred	color1  #000000
+set_from_resource $red		color9  #000000
+set_from_resource $darkgreen	color2  #000000
+set_from_resource $green	color10 #000000
+set_from_resource $darkyellow	color3  #000000
+set_from_resource $yellow	color11 #000000
+set_from_resource $darkblue	color4  #000000
+set_from_resource $blue		color12 #000000
+set_from_resource $darkmagenta	color5  #000000
+set_from_resource $magenta	color13 #000000
+set_from_resource $darkcyan	color6  #000000
+set_from_resource $cyan		color14 #000000
+set_from_resource $darkwhite	color7  #000000
+set_from_resource $white	color15 #000000
+set $transparent  		#00000000
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango:mono 9
+
+	colors {
+		background $darkblack
+		statusline $darkwhite
+		separator $cyan
+		focused_workspace  $blue $darkblue $darkwhite
+      	   	active_workspace   $blue $blue $darkwhite
+		inactive_workspace $darkblack $darkblack $white
+		urgent_workspace   $darkblack $darkblack $white
+		}
+		
         status_command i3blocks
+	position top
+	mode dock
+	modifier None
 }
 
-exec --no-startup-id "wal -i Desktop/rz.jpg"
+#exec --no-startup-id "wal -q --saturate 0.37 -i Desktop/rz.jpg"
+#exec --no-startup-id "wal -a 90 --saturate 0.37 -i ~/Downloads/'Telegram Desktop'/Untitled-1.png"
+exec --no-startup-id "wal -q -a 84 --saturate 0.9 -i ~/doc/web/simonstalenhag.se/bilderbig/by_localservers2_2560.jpg"
 
-exec --no-startup-id "pulseaudio -k"
-exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "compton"
 
 exec --no-startup-id "synclient TapButton1=1"
@@ -204,12 +246,12 @@ exec --no-startup-id "synclient VertScrollDelta=-37"
 
 exec --no-startup-id "xflux -l 40.1792 -g 44.4991"
 
-#exec --no-startup-id "wicd-gtk -t"
 exec --no-startup-id "qxkb"
 exec --no-startup-id "xbindkeys"
 exec --no-startup-id "emacs --daemon"
 exec --no-startup-id "xbanish"
 exec --no-startup-id "wicd-gtk -t"
+exec --no-startup-id "xautolock -time 10 -locker \"~/.local/bin/lock.sh\""
 
 for_window [class=^.*] border pixel 2
 gaps inner 7
