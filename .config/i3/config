@@ -229,8 +229,6 @@ bar {
 	modifier None
 }
 
-#exec --no-startup-id "wal -q --saturate 0.37 -i Desktop/rz.jpg"
-#exec --no-startup-id "wal -a 90 --saturate 0.37 -i ~/Downloads/'Telegram Desktop'/Untitled-1.png"
 exec --no-startup-id "wal -q -a 84 --saturate 0.9 -i ~/doc/web/simonstalenhag.se/bilderbig/by_localservers2_2560.jpg"
 
 exec --no-startup-id "compton"
@@ -252,6 +250,7 @@ exec --no-startup-id "emacs --daemon"
 exec --no-startup-id "xbanish"
 #exec --no-startup-id "wicd-gtk -t"
 exec --no-startup-id "xautolock -time 10 -locker \"~/.local/bin/lock.sh\""
+exec --no-startup-id "deluged"
 
 for_window [class=^.*] border pixel 2
 gaps inner 7
