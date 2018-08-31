@@ -229,7 +229,7 @@ bar {
 	modifier None
 }
 
-exec --no-startup-id "wal -q -a 84 --saturate 0.9 -i ~/doc/web/simonstalenhag.se/bilderbig/by_localservers2_2560.jpg"
+exec --no-startup-id "wal -q -a 84 --saturate 0.9 -i ~/doc/web/simonstalenhag.se/bilderbig/flyby_1920.jpg"
 
 exec --no-startup-id "compton"
 
@@ -242,7 +242,7 @@ exec --no-startup-id "synclient synclient PalmMinWidth=8"
 
 exec --no-startup-id "synclient VertScrollDelta=-37"
 
-exec --no-startup-id "xflux -l 40.1792 -g 44.4991"
+exec --no-startup-id "xflux -l 38.9716700 -g -95.2352500"
 
 exec --no-startup-id "qxkb"
 exec --no-startup-id "xbindkeys"
