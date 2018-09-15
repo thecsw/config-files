@@ -21,19 +21,36 @@ from there.
    
 ** Installed packages
 #+BEGIN_SRC emacs-lisp
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(font-use-system-font t)
- '(org-hidden-keywords nil)
- '(org-log-done (quote time))
- '(package-selected-packages (quote (avy clang-format flycheck auctex))))
+
+  ;;(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+  ;;(unless (require 'el-get nil 'noerror)
+  ;;  (with-current-buffer
+  ;;      (url-retrieve-synchronously
+  ;;       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+  ;;    (let (el-get-master-branch)
+  ;;      (goto-char (point-max))
+  ;;      (eval-print-last-sexp))))
+  ;;(el-get 'sync)
+
+  ;;(add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t)
+
+  (require 'autopair)
+  (autopair-global-mode) 
+
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(ansi-color-faces-vector
+     [default default default italic underline success warning error])
+   '(ansi-color-names-vector
+     ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
+   '(font-use-system-font t)
+   '(org-hidden-keywords nil)
+   '(org-log-done (quote time))
+   '(package-selected-packages (quote (avy clang-format flycheck auctex))))
 #+END_SRC
 ** Avy
 #+BEGIN_SRC emacs-lisp
@@ -81,16 +98,7 @@ This is just a bunch of my preffered faces.
  '(font-use-system-font t)
  '(org-hidden-keywords nil)
  '(org-log-done (quote time))
-
-'(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(font-use-system-font t)
- '(org-hidden-keywords nil)
- '(org-log-done (quote time))
  '(package-selected-packages (quote (clang-format flycheck auctex)))
-
 )
 
 
@@ -110,23 +118,6 @@ This is just a bunch of my preffered faces.
  '(org-document-info ((t (:foreground "color-129"))))
  '(org-document-title ((t (:foreground "color-129" :weight bold))))
  '(region ((t (:background "color-17"))))
-
-'(escape-glyph ((t (:foreground "brightred"))))
- '(font-latex-sectioning-0-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-1-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-2-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-3-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-4-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-5-face ((t (:foreground "color-128" :weight bold))))
- '(font-lock-comment-face ((t (:foreground "brightcyan"))))
- '(font-lock-doc-face ((t (:foreground "color-128"))))
- '(font-lock-string-face ((t (:foreground "brightgreen"))))
- '(info-index-match ((t (:foreground "yellow"))))
- '(next-error ((t (:foreground "brightyellow"))))
- '(org-document-info ((t (:foreground "color-129"))))
- '(org-document-title ((t (:foreground "color-129" :weight bold))))
- '(region ((t (:background "color-17"))))
-
 )
 #+END_SRC
 
@@ -148,8 +139,8 @@ This is just a bunch of my preffered faces.
   
 #+BEGIN_SRC emacs-lisp
   (require 'org-ref)
-  (setq reftex-default-bibliography '("~/doc/latex/src/references.bib"))
-  (setq org-ref-default-bibliography '("~/doc/latex/src/references.bib"))
+;;  (setq reftex-default-bibliography '("~/doc/latex/src/references.bib"))
+ ;; (setq org-ref-default-bibliography '("~/doc/latex/src/references.bib"))
 
   (setq org-latex-pdf-process
         '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b %f"
@@ -164,4 +155,10 @@ This is just a bunch of my preffered faces.
 ;;;;(setq linum-format "%d ")
 (setq linum-format "%4d \u2502 ")
 (global-linum-mode 1)
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+(setq org-confirm-babel-evaluate nil)
+
 #+END_SRC
