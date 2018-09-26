@@ -4,11 +4,12 @@ This is the extended emacs package downloader and installer, can get everything
 from there.
 
 #+BEGIN_SRC emacs-lisp
-(add-to-list 'package-archives
-     '("melpa" . "http://melpa.org/packages/") t)
-(when (< emacs-major-version 24)
-  ;; For compatibility 
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+)
 (package-initialize)
 #+END_SRC
 
@@ -21,16 +22,6 @@ from there.
    
 ** Installed packages
 #+BEGIN_SRC emacs-lisp
-
-  ;;(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-  ;;(unless (require 'el-get nil 'noerror)
-  ;;  (with-current-buffer
-  ;;      (url-retrieve-synchronously
-  ;;       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-  ;;    (let (el-get-master-branch)
-  ;;      (goto-char (point-max))
-  ;;      (eval-print-last-sexp))))
-  ;;(el-get 'sync)
 
   ;;(add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t)
@@ -83,42 +74,6 @@ from there.
 	  kept-new-versions 6
 	  kept-old-versions 2
 	  version-control t)
-#+END_SRC
-
-* Emacs faces
-
-This is just a bunch of my preffered faces.
-
-#+BEGIN_SRC emacs-lisp
-(custom-set-variables
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(font-use-system-font t)
- '(org-hidden-keywords nil)
- '(org-log-done (quote time))
- '(package-selected-packages (quote (clang-format flycheck auctex)))
-)
-
-
-(custom-set-faces
- '(escape-glyph ((t (:foreground "brightred"))))
- '(font-latex-sectioning-0-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-1-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-2-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-3-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-4-face ((t (:foreground "color-128" :height 1.1))))
- '(font-latex-sectioning-5-face ((t (:foreground "color-128" :weight bold))))
- '(font-lock-comment-face ((t (:foreground "brightcyan"))))
- '(font-lock-doc-face ((t (:foreground "color-128"))))
- '(font-lock-string-face ((t (:foreground "brightgreen"))))
- '(info-index-match ((t (:foreground "yellow"))))
- '(next-error ((t (:foreground "brightyellow"))))
- '(org-document-info ((t (:foreground "color-129"))))
- '(org-document-title ((t (:foreground "color-129" :weight bold))))
- '(region ((t (:background "color-17"))))
-)
 #+END_SRC
 
 * Org mode
