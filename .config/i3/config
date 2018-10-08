@@ -35,11 +35,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 bindsym $mod+b exec surf
 bindsym $mod+t exec telegram-desktop
-bindsym $mod+g exec slack
 bindsym $mod+p exec scrot
-
-bindsym $mod+y exec "~/.local/bin/lock.sh"
-
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -229,7 +225,7 @@ bar {
 	modifier None
 }
 
-exec --no-startup-id "wal -q -a 84 --saturate 0.9 -i ~/doc/web/simonstalenhag.se/bilderbig/flyby_1920.jpg"
+exec --no-startup-id "wal -q -a 84 --saturate 0.9 -i ~/doc/web/simonstalenhag.se/bilderbig/l_int04_big.jpg"
 
 exec --no-startup-id "compton"
 
@@ -242,7 +238,7 @@ exec --no-startup-id "synclient synclient PalmMinWidth=8"
 
 exec --no-startup-id "synclient VertScrollDelta=-37"
 
-exec --no-startup-id "xflux -l 38.9716700 -g -95.2352500"
+#exec --no-startup-id "xflux -l 38.9716700 -g -95.2352500"
 
 exec --no-startup-id "qxkb"
 exec --no-startup-id "xbindkeys"
@@ -255,3 +251,20 @@ exec --no-startup-id "deluged"
 for_window [class=^.*] border pixel 2
 gaps inner 7
 gaps outer 7
+
+set $Locker i3lock -fe -p win -i ~/.local/bin/bb.png && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
