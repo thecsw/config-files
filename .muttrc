@@ -1,0 +1,79 @@
+
+# My password
+source "gpg -dq $HOME/.mutt/mypass.gpg |"
+
+# IMAP for receiving mail
+set imap_user="s383u895"
+set imap_keepalive = 300
+set mail_check = 120
+unset imap_passive
+
+# Set up all the folders
+set folder="~/.mail/kumail"
+mailboxes = +INBOX
+set spoolfile = +INBOX
+set trash = +'Deleted Items'
+set postponed = +'Drafts'
+set record = +'Sent Items'
+
+# Default sending charset
+set send_charset="utf-8"
+
+# My signature
+set signature="$HOME/.mutt/thecsw.sig"
+
+# SMTP FOR SENDING EMAIL
+set realname="Sagindyk Urazayev"
+set my_user=s383u895
+set from = thecsw@ku.edu
+set smtp_url=smtp://$my_user:$my_pass@authsmtp.ku.edu:587
+
+# Sending mail options
+set edit_headers=yes
+set use_from = yes
+set fast_reply=yes
+set include=yes
+
+# SSL options
+set ssl_force_tls = yes
+set ssl_starttls = yes
+
+# Default text editor
+set editor="emacsclient -a \"\" -t"
+
+# Using GnuPG encryption and signing
+source ~/.mutt/gpg.rc
+
+# Set the mailcap (use w3m to read text/html)
+set mailcap_path = ~/.mutt/mailcap
+
+# Ways to open the mail messages
+auto_view text/html
+alternative_order text/plain text/html
+
+# Headers
+my_hdr X-Info: Keep It Simple, Stupid.
+my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
+my_hdr User-Agent: Every email client sucks, this one just sucks less.
+
+# Date and index formatting styles
+set date_format="%m-%d-%y %T"
+set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"# -*-muttrc-*-
+
+# Palette for use with the Linux console.  Black background.
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment red black
+color prompt brightmagenta black
+color message brightred black
+color error brightred black
+color indicator black red
+color status brightgreen blue
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index red black "~N|~O"
