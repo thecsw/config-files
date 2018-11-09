@@ -5,7 +5,7 @@ export UPDATE_ZSH_DAYS=7
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=/home/thecsw/.oh-my-zsh
 
-ZSH_THEME="ys"
+ZSH_THEME="clean"
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
@@ -23,11 +23,14 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 alias rm="rm -Iv"
 alias mkdir="mkdir -v"
+alias gco="git checkout"
+alias gb="git branch"
+alias lcd="cd $1 && ls"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/oh-my-zsh.sh
 
-echo '\n\tIn Linux we trust'
+echo '\n\tIn Linux we trust\n'
 
 plugins=( git )
 
@@ -36,3 +39,11 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
     export EDITOR='vim'
 fi
+
+ranger() {
+    if [ -z "$RANGER_LEVEL" ]; then
+	/usr/bin/ranger "$@"
+    else
+	exit
+    fi
+}

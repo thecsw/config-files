@@ -16,6 +16,13 @@ set trash = +'Deleted Items'
 set postponed = +'Drafts'
 set record = +'Sent Items'
 
+# Aliases and contacts
+set alias_file = "~/.mutt/aliases"
+#set aliases = +'Contacts'
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
 # Default sending charset
 set send_charset="utf-8"
 
@@ -32,7 +39,7 @@ set smtp_url=smtp://$my_user:$my_pass@authsmtp.ku.edu:587
 set edit_headers=yes
 set use_from = yes
 set fast_reply=yes
-set include=yes
+set include=no
 
 # SSL options
 set ssl_force_tls = yes

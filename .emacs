@@ -1,20 +1,21 @@
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-;;(el-get)
+;;; Package --- Summary
 ;;; Code:
+;;; Commentary:
 (package-initialize)
 
 (org-babel-load-file "~/.emacs.d/configuration.org")
 
-(require 'go-autocomplete)
-(require 'auto-complete-config)
+;(require 'go-autocomplete)
+;(require 'auto-complete-config)
 
 (ac-config-default)
 
 (menu-bar-mode -1)
+
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <left>") 'windmove-left)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -35,8 +36,16 @@
  '(next-error ((t (:foreground "brightyellow"))))
  '(org-document-info ((t (:foreground "color-129"))))
  '(org-document-title ((t (:foreground "color-129" :weight bold))))
- '(package-selected-packages (quote (company ipython-shell-send autopair auto-complete org-ref clang-format flycheck auctex)))
  '(region ((t (:background "color-17")))))
+
+(setq redisplay-dont-pause t
+      scroll-margin 1
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
+
+;(setq split-height-threshold nil)
+;(setq split-width-threshold 0)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -49,17 +58,12 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(font-use-system-font t)
  '(inhibit-startup-screen t)
+ '(org-agenda-files (quote ("~/doc/classes/HNRS190/final_proposal/main.org")))
  '(org-hidden-keywords nil)
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (jedi yaml-mode auto-complete-clang go-autocomplete clang-format go-mode go flycheck auctex))))
-
-(setq jedi:complete-on-dot t)
-
-(autoload 'wl "wl" "Wanderlust" t)
-(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
-(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
+    (minesweeper sokoban 2048-game auto-correct auto-complete-auctex auto-complete-c-headers auctex-latexmk jedi yaml-mode auto-complete-clang go-autocomplete clang-format go-mode go flycheck auctex))))
 
 (provide '.emacs)
 ;;; .emacs ends here

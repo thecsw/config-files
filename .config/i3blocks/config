@@ -26,7 +26,7 @@
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
-markup=none
+markup=pango
 
 # Volume indicator
 #
@@ -40,6 +40,28 @@ markup=none
 #instance=PCM
 #interval=once
 #signal=10
+
+# Network interface monitoring
+#
+# If the instance is not specified, use the interface used for default route.
+# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+#[bandwidth]
+#instance=wlp1s0
+#interval=1
+
+#[wifi]
+#instance=wlp1s0
+#interval=1
+
+[public-ip]
+command=wget -qO - icanhazip.com
+interval=once
+
+[iface]
+instance=wlp1s0
+color=#00FF00
+separator=true
+interval=1
 
 # Memory usage
 #
@@ -60,34 +82,21 @@ interval=1
 # The directory defaults to $HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
+
+[disk]
+label=SDA
+instance=/dev/sda
+interval=10
+
 [disk]
 label=HOME
 instance=/home
-interval=30
+interval=10
 
 [disk]
 label=ROOT
 instance=/mnt
-interval=1
-
-# Network interface monitoring
-#
-# If the instance is not specified, use the interface used for default route.
-# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-[iface]
-instance=wlp1s0
-color=#00FF00
-interval=1
-separator=true
-
-#[wifi]
-#instance=wlp1s0
-#interval=10
-#separator=true
-
-#[bandwidth]
-#instance=eth0
-#interval=5
+interval=10
 
 # CPU usage
 #
@@ -99,9 +108,6 @@ separator=true
 #min_width=CPU: 100.00%
 #separator=true
 
-#[load_average]
-#interval=1
-
 # Battery indicator
 #
 # The battery instance defaults to 0.
@@ -109,20 +115,32 @@ separator=true
 label=BAT
 #label=⚡
 instance=0
-interval=1
+interval=30
+
+# Temperature
+#
+# Support multiple chips, though lm-sensors.
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+[temperature]
+label=TEMP
+#label=🌡️
+interval=30
+
+#[load_average]
+#interval=30
 
 # Date Time
-#
 [time]
 command=date '+%d-%m-%Y %H:%M:%S'
-interval=1
+interval=5
 separator=true
 # Generic media player support
 #
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 #[mediaplayer]
-#instance=spotify
+#instance=mpv
 #interval=5
 #signal=10
 
@@ -132,14 +150,10 @@ separator=true
 #[openvpn]
 #interval=20
 
-# Temperature
-#
-# Support multiple chips, though lm-sensors.
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[temperature]
-label=TEMP
-interval=1
+#[pacman]
+#full_text=c ·
+#command=echo "· ${full_text~~}"
+#color=#FFFF00
 
 # Key indicators
 #
@@ -147,12 +161,12 @@ interval=1
 #
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#instance=CAPS
-#interval=once
-#signal=11
+[keyindicator]
+instance=CAPS
+interval=once
+signal=11
 
-#[keyindicator]
-#instance=NUM
-#interval=once
-#signal=11
+[mail]
+label=📬
+command=ls ~/.mail/*/INBOX/new | wc -l
+interval=60
