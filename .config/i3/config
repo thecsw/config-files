@@ -1,0 +1,272 @@
+
+set $mod Mod4
+set $term --no-startup-id $TERMINAL
+
+font pango:monospace 8
+
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Start the surf browser
+bindsym $mod+b exec surf
+
+# Start telegram
+bindsym $mod+t exec telegram-desktop
+
+# Take a screenshot
+bindsym $mod+p exec scrot ~/doc/shots/'%Y-%m-%d_%H:%M.png' -q 100 -b -z
+
+# Some quick terminals
+bindsym $mod+i 		     exec $term -e htop
+bindsym $mod+c 		     exec $term -e calcurse
+bindsym $mod+n 		     exec $term -e mutt
+bindsym $mod+g 		     exec $term -e ranger
+
+# Our pretty gaps
+for_window [class=^.*] border pixel 0
+gaps inner 8
+gaps outer 8
+
+# Playing with gaps
+bindsym $mod+s		     gaps inner current plus 8
+bindsym $mod+Shift+s	     gaps inner current minus 8
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Switch to urgent window
+bindsym $mod+x [urgent=latest] focus
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+
+# Dropdown terminal
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+exec --no-startup-id $term -name dropdown
+bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+
+# Python math terminal
+for_window [instance="python"] floating enable
+for_window [instance="python"] resize set 625 400
+for_window [instance="python"] move scratchpad
+for_window [instance="python"] border pixel 5
+exec --no-startup-id $term -name python -e python
+bindsym $mod+y [instance="python"] scratchpad show; [instance="python"] move position center
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 0
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# bindsym $mod+Shift+x exec prompt "Are you sure you want to shutdown?" "$shutdown"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# move floating windows with keys
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left 15 px
+    bindsym Down  move down 15 px
+    bindsym Up    move up 15 px
+    bindsym Right move right 15 px
+
+    bindsym h     move left 15 px 
+    bindsym j     move down 15 px 
+    bindsym k     move up 15 px 
+    bindsym l     move right 15 px 
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+
+# Set Xresources colors:
+set_from_resource $darkblack	color0  #000000
+set_from_resource $black	color8  #000000
+set_from_resource $darkred	color1  #000000
+set_from_resource $red		color9  #000000
+set_from_resource $darkgreen	color2  #000000
+set_from_resource $green	color10 #000000
+set_from_resource $darkyellow	color3  #000000
+set_from_resource $yellow	color11 #000000
+set_from_resource $darkblue	color4  #000000
+set_from_resource $blue		color12 #000000
+set_from_resource $darkmagenta	color5  #000000
+set_from_resource $magenta	color13 #000000
+set_from_resource $darkcyan	color6  #000000
+set_from_resource $cyan		color14 #000000
+set_from_resource $darkwhite	color7  #000000
+set_from_resource $white	color15 #000000
+set $transparent  		#00000000
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        font pango:mono 9
+
+	colors {
+		background $darkblack
+		statusline $darkwhite
+		separator $cyan
+		focused_workspace  $blue $darkblue $darkwhite
+      	   	active_workspace   $blue $blue $darkwhite
+		inactive_workspace $darkblack $darkblack $white
+		urgent_workspace   $darkblack $darkblack $white
+		}
+		
+        status_command i3blocks
+	position top
+	mode dock
+	modifier None
+}
+
+# Some things to do on startup
+exec --no-startup-id "udevil mount /dev/sda"
+exec --no-startup-id "wal -q --saturate 0.7 -i /media/sda-usb-Generic-_SD_MMC_/web/simonstalenhag.se/bilderbig/by_warmachines1_2560.jpg"
+
+exec --no-startup-id "compton"
+
+exec --no-startup-id "synclient TapButton1=1"
+exec --no-startup-id "synclient TapButton2=3"
+exec --no-startup-id "synclient TapButton3=2"
+
+exec --no-startup-id "synclient PalmDetect=1"
+exec --no-startup-id "synclient synclient PalmMinWidth=8"
+
+exec --no-startup-id "synclient VertScrollDelta=-37"
+
+exec --no-startup-id "xflux -l 38.9716700 -g -95.2352500"
+
+exec --no-startup-id "qxkb"
+exec --no-startup-id "xbindkeys"
+exec --no-startup-id "xbanish"
+exec --no-startup-id "xautolock -time 10 -locker \"~/.local/bin/lock.sh\""
+exec --no-startup-id "deluged"
+
+set $Locker i3lock -fe -p win -i ~/.local/bin/bb.png && sleep 1
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Pause mode "$mode_system"
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
