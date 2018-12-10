@@ -45,7 +45,7 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (use-package go-scratch go-guru jedi hacker-typer minesweeper sokoban 2048-game auto-correct auto-complete-auctex auto-complete-c-headers auctex-latexmk yaml-mode auto-complete-clang go-autocomplete clang-format go-mode flycheck auctex))))
+    (org-journal use-package go-scratch go-guru jedi hacker-typer minesweeper sokoban 2048-game auto-correct auto-complete-auctex auto-complete-c-headers auctex-latexmk yaml-mode auto-complete-clang go-autocomplete clang-format go-mode flycheck auctex))))
 ; add pylint here
 
 ;; Configure flymake for Python
@@ -71,6 +71,12 @@
 ;(add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-cp" 'flymake-goto-prev-error)))
 
 (setq md4rd-subs-active '(emacs tifu))
+
+(setq org-journal-dir "~/doc/journal")
+
+;(autoload 'wl "wl" "Wanderlust" t)
+;(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
+;(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
 (provide '.emacs)
 ;;; .emacs ends here
