@@ -5,8 +5,8 @@
 
 (org-babel-load-file "~/.emacs.d/configuration.org")
 
-;(require 'go-autocomplete)
-;(require 'auto-complete-config)
+(require 'go-autocomplete)
+(require 'auto-complete-config)
 
 (ac-config-default)
 
@@ -45,38 +45,9 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (org-journal use-package go-scratch go-guru jedi hacker-typer minesweeper sokoban 2048-game auto-correct auto-complete-auctex auto-complete-c-headers auctex-latexmk yaml-mode auto-complete-clang go-autocomplete clang-format go-mode flycheck auctex))))
-; add pylint here
-
-;; Configure flymake for Python
-;(when (load "flymake" t)
-;  (defun flymake-pylint-init ()
-;    (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;		       'flymake-create-temp-inplace))
-;	   (local-file (file-relative-name
-;			temp-file
-;			(file-name-directory buffer-file-name))))
-;      (list "epylint" (list local-file))))
-;  (add-to-list 'flymake-allowed-file-name-masks
-;	       '("\\.py\\'" flymake-pylint-init)))
-
-;; Set as a minor mode for Python
-;(add-hook 'python-mode-hook '(lambda () (flymake-mode)))
-
-;; Configure to wait a bit longer after edits before starting
-;(setq-default flymake-no-changes-timeout '3)
-
-;; Keymaps to navigate to the errors
-;(add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-cn" 'flymake-goto-next-error)))
-;(add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-cp" 'flymake-goto-prev-error)))
-
-(setq md4rd-subs-active '(emacs tifu))
+    (proof-general coq-commenter avy org-journal use-package go-scratch go-guru jedi hacker-typer minesweeper sokoban 2048-game auto-correct auto-complete-auctex auto-complete-c-headers auctex-latexmk yaml-mode auto-complete-clang go-autocomplete clang-format go-mode flycheck auctex))))
 
 (setq org-journal-dir "~/doc/journal")
-
-;(autoload 'wl "wl" "Wanderlust" t)
-;(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
-;(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
 (provide '.emacs)
 ;;; .emacs ends here
