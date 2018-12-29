@@ -1,27 +1,45 @@
 # Configuring fuck to give some fucks
 thefuck --alias | source
-set EDITOR em
 
+# In Linux we trust
 function fish_greeting
     echo -e '\n\tIn Linux we trust\n'
 end
 
+# cd into a dir and ls
 function lcd
     cd $argv; and ls
 end
 
+# Emacs client
 alias em "emacsclient -nw"
-alias ems "emacs --daemon"
-alias emk "emacsclient -nw --eval '(kill-emacs)'"
+
+# Starting X11
 alias x "startx"
-alias v "w3m https://duckduckgo.com"
+
+# ncurses search
+alias duck "w3m https://duckduckgo.com"
+
+# User level mounting
 alias m "udevil mount"
 alias um "udevil umount"
+
+# Scientific ncurses calculator
+alias scim "sc-im"
+
+# Some xclip short commands
+alias c "xclip"
+alias v "xclip -o"
+
+# NANI
 alias nani "figlet 'NANI?'"
+
+# Some convenient gnu tools
 alias cp "cp -iv"
 alias mv "mv -iv"
 alias rm "rm -Iv"
 alias mkdir "mkdir -v"
+
+# git shortcuts
 alias gco "git checkout"
 alias gb "git branch"
-alias scim "sc-im"
