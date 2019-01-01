@@ -1,6 +1,9 @@
 # Configuring fuck to give some fucks
 thefuck --alias | source
 
+# Setting my terminal
+set -Ux TERMINAL urxvt
+
 # In Linux we trust
 function fish_greeting
     echo -e '\n\tIn Linux we trust\n'
@@ -17,6 +20,9 @@ alias em "emacsclient -nw"
 # Starting X11
 alias x "startx"
 
+# Get weather
+alias weather "curl wttr.in"
+
 # ncurses search
 alias duck "w3m https://duckduckgo.com"
 
@@ -30,6 +36,16 @@ alias scim "sc-im"
 # Some xclip short commands
 alias c "xclip"
 alias v "xclip -o"
+
+# Downloading with youtube-dl
+alias youtube-mp3 "youtube-dl -f '(bestaudio)[protocol^=http]' --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s' --ignore-errors"
+alias youtube-get "youtube-dl --get-filename -o '%(title)s.%(ext)s' --restrict-filename --ignore-errors"
+alias youtube-playlist "youtube-dl -f '(bestvideo+bestaudio)[protocol^=http]' -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias youtube-download "youtube-dl -f '(bestvideo+bestaudio)[protocol^=http]' -o '%(title)s.%(ext)s' --ignore-errors"
+
+function youtube-play
+    youtube-dl -f '(bestaudio+bestvideo)[protocol^=http]' --ignore-errors -o - $argv | mpv -
+end
 
 # NANI
 alias nani "figlet 'NANI?'"
