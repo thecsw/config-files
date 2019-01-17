@@ -3,6 +3,10 @@ thefuck --alias | source
 
 # Setting my terminal
 set -Ux TERMINAL urxvt
+set -Ux SHELL urxvt
+set -Ux EDITOR 'emacsclient -nw'
+set -Ux PAGER less
+set -Ux NNN_USE_EDITOR 1
 
 # In Linux we trust
 function fish_greeting
@@ -12,6 +16,15 @@ end
 # cd into a dir and ls
 function lcd
     cd $argv; and ls
+end
+
+# Playing movies and videos in tty
+function mplt
+    mplayer -vo fbdev2 -zoom -x 681 -y 376 -geometry 100%:0% $argv > /dev/null ^ /dev/null
+end
+
+function mpl
+    mplayer -vo fbdev2 -zoom -x 1366 -y 768 $argv > /dev/null ^ /dev/null
 end
 
 # Emacs client
@@ -40,7 +53,7 @@ alias v "xclip -o"
 # Downloading with youtube-dl
 alias youtube-mp3 "youtube-dl -f '(bestaudio)[protocol^=http]' --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s' --ignore-errors"
 alias youtube-get "youtube-dl --get-filename -o '%(title)s.%(ext)s' --restrict-filename --ignore-errors"
-alias youtube-playlist "youtube-dl -f '(bestvideo+bestaudio)[protocol^=http]' -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias youtube-playlist "youtube-dl -f '(bestaudio)[protocol^=http]' --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s'"
 alias youtube-download "youtube-dl -f '(bestvideo+bestaudio)[protocol^=http]' -o '%(title)s.%(ext)s' --ignore-errors"
 
 function youtube-play
@@ -55,7 +68,9 @@ alias cp "cp -iv"
 alias mv "mv -iv"
 alias rm "rm -Iv"
 alias mkdir "mkdir -v"
+alias p "cat"
 
 # git shortcuts
 alias gco "git checkout"
 alias gb "git branch"
+
