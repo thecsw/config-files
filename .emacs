@@ -5,8 +5,10 @@
 
 (org-babel-load-file "~/.emacs.d/configuration.org")
 
-(require 'go-autocomplete)
-(require 'auto-complete-config)
+;(require 'go-autocomplete)
+;(require 'auto-complete-config)
+
+;(global-set-key (kbd "C-x g") 'magit-status)
 
 (ac-config-default)
 
@@ -45,9 +47,12 @@
  '(org-log-done (quote time))
  '(package-selected-packages
    (quote
-    (proof-general coq-commenter avy org-journal use-package go-scratch go-guru jedi hacker-typer minesweeper sokoban 2048-game auto-correct auto-complete-auctex auto-complete-c-headers auctex-latexmk yaml-mode auto-complete-clang go-autocomplete clang-format go-mode flycheck auctex))))
+    (autopair fish-mode proof-general coq-commenter avy use-package auto-complete-auctex yaml-mode clang-format flycheck auctex))))
 
-(setq org-journal-dir "~/doc/journal")
+;(setq org-journal-dir "~/doc/journal")
+
+(require 'autopair)
+(autopair-global-mode)
 
 (provide '.emacs)
 ;;; .emacs ends here
