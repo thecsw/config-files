@@ -1,6 +1,6 @@
 
 set $mod Mod4
-set $term --no-startup-id $TERMINAL
+set $term $TERMINAL
 
 font pango:monospace 8
 
@@ -10,7 +10,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Start the surf browser
-bindsym $mod+b exec surf
+bindsym $mod+b exec qutebrowser
 
 # Start telegram
 bindsym $mod+t exec telegram-desktop
@@ -19,15 +19,16 @@ bindsym $mod+t exec telegram-desktop
 bindsym $mod+p exec scrot ~/doc/shots/'%Y-%m-%d_%H:%M.png' -q 100 -b -z
 
 # Some quick terminals
-bindsym $mod+i 		     exec $term -e htop
-bindsym $mod+c 		     exec $term -e calcurse
-bindsym $mod+n 		     exec $term -e mutt
-bindsym $mod+g 		     exec $term -e ranger
+bindsym $mod+i exec $term -e htop
+bindsym $mod+c exec $term -e calcurse
+bindsym $mod+n exec $term -e mutt
+bindsym $mod+g exec $term -e ranger
+bindsym $mod+l exec $term -e nnn
 
 # Our pretty gaps
 for_window [class=^.*] border pixel 0
-gaps inner 8
-gaps outer 8
+gaps inner 4
+gaps outer 4
 
 # Playing with gaps
 bindsym $mod+s		     gaps inner current plus 8
@@ -38,12 +39,6 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -186,8 +181,6 @@ mode "move" {
     bindsym Escape mode "default"
 }
 
-
-
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
 set_from_resource $black	color8  #000000
@@ -206,7 +199,6 @@ set_from_resource $cyan		color14 #000000
 set_from_resource $darkwhite	color7  #000000
 set_from_resource $white	color15 #000000
 set $transparent  		#00000000
-
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -231,7 +223,7 @@ bar {
 
 # Some things to do on startup
 exec --no-startup-id "udevil mount /dev/sda"
-exec --no-startup-id "wal -q --saturate 0.7 -i /media/sda-usb-Generic-_SD_MMC_/web/simonstalenhag.se/bilderbig/by_warmachines1_2560.jpg"
+exec --no-startup-id "wal -q -i ~/.config/wallpapers/The_Starry_Night_Van_Gogh_1889.jpg"
 
 exec --no-startup-id "compton"
 
@@ -244,15 +236,17 @@ exec --no-startup-id "synclient synclient PalmMinWidth=8"
 
 exec --no-startup-id "synclient VertScrollDelta=-37"
 
-exec --no-startup-id "xflux -l 38.9716700 -g -95.2352500"
+exec --no-startup-id "/usr/lib/notification-daemon-1.0/notification-daemon"
+
+#exec --no-startup-id "xflux -l 38.9716700 -g -95.2352500"
 
 exec --no-startup-id "qxkb"
 exec --no-startup-id "xbindkeys"
 exec --no-startup-id "xbanish"
 exec --no-startup-id "xautolock -time 10 -locker \"~/.local/bin/lock.sh\""
-exec --no-startup-id "deluged"
+#exec --no-startup-id "deluged"
 
-set $Locker i3lock -fe -p win -i ~/.local/bin/bb.png && sleep 1
+set $Locker i3lock -fe -p win -i ~/.config/wallpapers/The_Starry_Night_Van_Gogh_1889.jpg"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
