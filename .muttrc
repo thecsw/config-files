@@ -61,7 +61,7 @@ alternative_order text/plain text/html
 # Headers
 my_hdr X-Info: Keep It Simple, Stupid.
 my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
-my_hdr User-Agent: Every email client sucks, this one just sucks less.
+#my_hdr User-Agent: Every email client sucks, this one just sucks less.
 
 # Date and index formatting styles
 set date_format="%m-%d-%y %T"
@@ -78,7 +78,9 @@ color error brightred black
 color indicator black red
 color status brightgreen blue
 color tree white black
-color normal white black
+
+# Change default to white to make it non-transparent
+color normal white default
 color markers red black
 color search white black
 color tilde brightmagenta black
