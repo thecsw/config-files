@@ -1,4 +1,3 @@
-
 # My password
 source "gpg -dq $HOME/.mutt/mypass.gpg |"
 
@@ -11,6 +10,8 @@ unset imap_passive
 # Set up all the folders
 set folder="~/.mail/kumail"
 mailboxes = +INBOX
+mailboxes = +'Sent Items'
+mailboxes = +'Deleted Items'
 set spoolfile = +INBOX
 set trash = +'Deleted Items'
 set postponed = +'Drafts'
@@ -22,6 +23,10 @@ set alias_file = "~/.mutt/aliases"
 set sort_alias = alias
 set reverse_alias = yes
 source $alias_file
+
+# Sort by reverse date
+set sleep_time = 0
+set sort = 'reverse-date'
 
 # Default sending charset
 set send_charset="utf-8"
@@ -46,7 +51,7 @@ set ssl_force_tls = yes
 set ssl_starttls = yes
 
 # Default text editor
-set editor="emacsclient -a \"\" -t"
+set editor = $EDITOR
 
 # Using GnuPG encryption and signing
 source ~/.mutt/gpg.rc
@@ -61,28 +66,30 @@ alternative_order text/plain text/html
 # Headers
 my_hdr X-Info: Keep It Simple, Stupid.
 my_hdr X-Operating-System: `uname -s`, kernel `uname -r`
-#my_hdr User-Agent: Every email client sucks, this one just sucks less.
+my_hdr User-Agent: Every email client sucks, this one just sucks less.
+
+set markers = no
+set mark_old = no
+
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set forward_quote                    # include message in forwards
+set reverse_name                     # reply as whomever it was to
+set include                          # include message in replies
+
+auto_view text/html
+auto_view application/pgp-encrypted
+alternative_order text/plain text/enriched text/html
+set rfc2047_parameters = yes
 
 # Date and index formatting styles
 set date_format="%m-%d-%y %T"
 set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"# -*-muttrc-*-
 
-# Palette for use with the Linux console.  Black background.
-color hdrdefault blue black
-color quoted blue black
-color signature blue black
-color attachment red black
-color prompt brightmagenta black
-color message brightred black
-color error brightred black
-color indicator black red
-color status brightgreen blue
-color tree white black
+# Set the colors
+# Inspiration taken from @lukesmith
+source $HOME/.mutt/color.mutt
 
-# Change default to white to make it non-transparent
-color normal white default
-color markers red black
-color search white black
-color tilde brightmagenta black
-color index blue black ~F
-color index red black "~N|~O"
+# Press T to sync everything and t only the 
+macro index T "<shell-escape>offlineimap -q<enter>" "run offlineimap to sync all mail"
+macro index t "<shell-escape>offlineimap -qf 'INBOX'<enter>" "run offlineimap to sync INBOX"
