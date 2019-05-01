@@ -14,7 +14,7 @@ print 'Copying the file to ~/.config/wallpapers/...';
 system("cp $file_name ~/.config/wallpapers/");
 print " \033[1;32mDONE.\033[0m\n";
 $file_name =~ /.*\/?(.+)$/;
-my $wall_file = "~/.config/wallpapers/$1";
+my $wall_file = "~/.config/wallpapers/$file_name";
 $wall_file =~ s/\//\\\//g;
 
 # Setting the wal
@@ -22,9 +22,11 @@ print 'Setting up the wal colorscheme...';
 system("wal -q -i $file_name");
 print " \033[1;32mDONE.\033[0m\n";
 
+print $wall_file;
+
 # Updating the i3 config to autoload wall image
 print 'Updating the i3 config to autoload wall image...';
-system("sed 's/-i .*/-i $wall_file\"/g' -i ~/.config/i3/config");
+system("sed 's|\-i .*|\-i $wall_file\"|g' -i ~/.config/i3/config");
 print " \033[1;32mDONE.\033[0m\n";
 
 # Configuring zathura theme dark color

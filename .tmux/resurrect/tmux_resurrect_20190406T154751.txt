@@ -1,0 +1,5 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	nnn	:nnn
+pane	1	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+window	0	0	1	:*	b33d,134x32,0,0,0
+window	1	0	1	:*	b33e,134x32,0,0,1
+state	1	

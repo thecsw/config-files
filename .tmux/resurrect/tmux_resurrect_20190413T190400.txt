@@ -1,0 +1,7 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	fish	:
+pane	2	0	:[tmux]	1	:*	0	:/home/thecsw	1	fish	:
+pane	3	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+window	0	0	1	:*	b33e,134x32,0,0,1
+window	2	0	1	:*	b33f,134x32,0,0,2
+window	3	0	1	:*	b344,134x32,0,0,7
+state	3	

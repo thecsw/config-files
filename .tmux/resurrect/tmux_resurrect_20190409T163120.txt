@@ -1,0 +1,9 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	fish	:
+pane	1	0	:ssh	1	:*	0	:/home/thecsw	0	fish	:
+pane	1	0	:ssh	1	:*	1	:/home/thecsw	0	fish	:
+pane	1	0	:ssh	1	:*	2	:/home/thecsw	1	fish	:
+pane	2	0	:[tmux]	1	:*	0	:/home/thecsw	1	fish	:
+window	0	0	1	:*	c83e,170x47,0,0,1
+window	1	0	1	:*	91e8,170x47,0,0{85x47,0,0,2,84x47,86,0[84x23,86,0,9,84x23,86,24,10]}
+window	2	0	1	:*	c845,170x47,0,0,8
+state	1	2

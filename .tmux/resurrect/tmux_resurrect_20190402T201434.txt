@@ -1,0 +1,15 @@
+pane	0	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	1	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	2	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	4	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	5	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	6	0	:fish	1	:*	0	:/media/sda-usb-Generic-_SD_MMC_	1	fish	:
+pane	7	1	:mpv	1	:*	0	:/media/sdb-usb-Generic-_SD_MMC_	1	mpv	:mpv Westworld scenes of Dr. Robert Ford (Part 1).mkv
+window	0	0	1	:*	b33e,134x32,0,0,1
+window	1	0	1	:*	b33f,134x32,0,0,2
+window	2	0	1	:*	b340,134x32,0,0,3
+window	4	0	1	:*	b341,134x32,0,0,4
+window	5	0	1	:*	b342,134x32,0,0,5
+window	6	0	1	:*	b344,134x32,0,0,7
+window	7	1	1	:*	c826,32x39,0,0,9
+state	7	

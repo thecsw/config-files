@@ -1,0 +1,19 @@
+pane	0	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	1	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	2	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	4	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	5	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	6	0	:fish	1	:*	0	:/media/sda-usb-Generic-_SD_MMC_	1	fish	:
+pane	7	0	:emacsclient	1	:*	0	:/home/thecsw/gits/HiveWriting_bot/src	1	emacsclient	:emacsclient -nw main.py
+pane	7	1	:fish	0	:	0	:/media/sdb-usb-Generic-_SD_MMC_	1	fish	:
+pane	7	2	:emacsclient	0	:-	0	:/home/thecsw/gits/memeinvestor_bot/src	1	emacsclient	:emacsclient -nw submitter.py
+window	0	0	1	:*	b33e,134x32,0,0,1
+window	1	0	1	:*	b33f,134x32,0,0,2
+window	2	0	1	:*	b340,134x32,0,0,3
+window	4	0	1	:*	b341,134x32,0,0,4
+window	5	0	1	:*	b342,134x32,0,0,5
+window	6	0	1	:*	b344,134x32,0,0,7
+window	7	0	1	:*	59d0,134x32,0,0,11
+window	7	1	0	:	b346,134x32,0,0,9
+window	7	2	0	:-	59d1,134x32,0,0,12
+state	7	

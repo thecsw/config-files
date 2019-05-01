@@ -21,7 +21,7 @@ bindsym $mod+p exec scrot ~/doc/shots/'%Y-%m-%d_%H:%M.png' -q 100 -b -z
 # Some quick terminals
 bindsym $mod+i exec $term -e htop
 bindsym $mod+c exec $term -e calcurse
-bindsym $mod+n exec $term -e mutt
+bindsym $mod+n exec $term -e neomutt
 bindsym $mod+g exec $term -e ranger
 bindsym $mod+l exec $term -e nnn
 
@@ -68,9 +68,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
+bindsym $mod+k layout stacking
 bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -222,8 +222,8 @@ bar {
 }
 
 # Some things to do on startup
-exec --no-startup-id "udevil mount /dev/sda"
-exec --no-startup-id "wal -q -i ~/.config/wallpapers/g"
+#exec --no-startup-id "udevil mount /dev/sda"
+exec --no-startup-id "wal -q -i ~/.config/wallpapers/das5ycoc0zt21.jpg"
 
 exec --no-startup-id "compton"
 

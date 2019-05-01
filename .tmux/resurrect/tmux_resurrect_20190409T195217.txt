@@ -1,0 +1,11 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	fish	:
+pane	2	0	:[tmux]	1	:*	0	:/home/thecsw	1	fish	:
+pane	3	0	:sudo	0	:	0	:/home/thecsw/doc/KCDC-Alpha	1	sudo	:sudo openvpn client_prod_1.ovpn
+pane	3	1	:ssh	0	:-	0	:/home/thecsw/doc/KCDC-Alpha	1	ssh	:ssh root@10.1.1.19
+pane	3	2	:fish	1	:*	0	:/home/thecsw/doc/KCDC-Alpha	1	fish	:
+window	0	0	1	:*	b33e,134x32,0,0,1
+window	2	0	1	:*	b342,134x32,0,0,5
+window	3	0	0	:	b343,134x32,0,0,6
+window	3	1	0	:-	b344,134x32,0,0,7
+window	3	2	1	:*	b345,134x32,0,0,8
+state	3	

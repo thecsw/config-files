@@ -1,0 +1,11 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	fish	:
+pane	1	0	:ssh	0	:-	0	:/home/thecsw	1	ssh	:ssh root@10.1.1.19
+pane	1	1	:ssh	1	:*	0	:/home/thecsw	1	ssh	:ssh root@10.1.1.19
+pane	1	2	:ssh	0	:	0	:/home/thecsw	1	ssh	:ssh vyos@10.1.1.17
+pane	2	0	:[tmux]	1	:*	0	:/home/thecsw	1	fish	:
+window	0	0	1	:*	b33e,134x32,0,0,1
+window	1	0	0	:-	b33f,134x32,0,0,2
+window	1	1	1	:*	b346,134x32,0,0,9
+window	1	2	0	:	b345,134x32,0,0,8
+window	2	0	1	:*	b343,134x32,0,0,6
+state	1	2

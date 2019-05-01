@@ -1,0 +1,13 @@
+pane	0	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	1	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	2	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	4	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	5	0	:fish	1	:*	0	:/home/thecsw	1	fish	:
+pane	6	0	:fish	1	:*	0	:/home/thecsw/gits/jayhackers	1	fish	:
+window	0	0	1	:*	b33d,134x32,0,0,0
+window	1	0	1	:*	b33e,134x32,0,0,1
+window	2	0	1	:*	b33f,134x32,0,0,2
+window	4	0	1	:*	b340,134x32,0,0,3
+window	5	0	1	:*	b341,134x32,0,0,4
+window	6	0	1	:*	59cf,134x32,0,0,10
+state	6	

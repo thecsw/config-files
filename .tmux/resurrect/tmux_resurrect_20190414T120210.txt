@@ -1,0 +1,16 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	fish	:
+pane	2	0	:[tmux]	1	:*	0	:/home/thecsw	1	fish	:
+pane	3	0	:fish	0	:	0	:/home/thecsw/Downloads/Telegram\ Desktop	1	sudo	:sudo openvpn Alpha_Onsite_VPN.ovpn
+pane	3	1	:fish	0	:	0	:/home/thecsw	1	fish	:
+pane	3	2	:fish	0	:-	0	:/home/thecsw	1	fish	:
+pane	3	3	:fish	1	:*	0	:/home/thecsw	0	fish	:
+pane	3	3	:fish	1	:*	1	:/home/thecsw	1	fish	:
+pane	4	0	:fish	1	:*	0	:/home/thecsw/Downloads/Telegram\ Desktop	1	fish	:
+window	0	0	1	:*	b33e,134x32,0,0,1
+window	2	0	1	:*	b33f,134x32,0,0,2
+window	3	0	0	:	b340,134x32,0,0,3
+window	3	1	0	:	b341,134x32,0,0,4
+window	3	2	0	:-	b342,134x32,0,0,5
+window	3	3	1	:*	9876,134x32,0,0{67x32,0,0,7,66x32,68,0,9}
+window	4	0	1	:*	59cf,134x32,0,0,10
+state	4	

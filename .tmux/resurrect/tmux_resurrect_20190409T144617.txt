@@ -1,0 +1,17 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	fish	:
+pane	1	0	:ssh	0	:	0	:/home/thecsw	1	fish	:
+pane	1	1	:ssh	0	:	0	:/home/thecsw/doc/KCDC-Alpha	1	fish	:
+pane	1	2	:ssh	0	:	0	:/home/thecsw	1	fish	:
+pane	1	3	:ssh	0	:	0	:/home/thecsw	1	fish	:
+pane	1	4	:fish	0	:-	0	:/home/thecsw	1	fish	:
+pane	1	5	:find	1	:*	0	:/home/thecsw/doc/classes/EECS268/labs/Sagindyk-2966741-Lab-07/exercise1	1	fish	:
+pane	2	0	:[tmux]	1	:*	0	:/home/thecsw	1	fish	:
+window	0	0	1	:*	c83e,170x47,0,0,1
+window	1	0	0	:	c83f,170x47,0,0,2
+window	1	1	0	:	c840,170x47,0,0,3
+window	1	2	0	:	c841,170x47,0,0,4
+window	1	3	0	:	c842,170x47,0,0,5
+window	1	4	0	:-	c843,170x47,0,0,6
+window	1	5	1	:*	c844,170x47,0,0,7
+window	2	0	1	:*	c845,170x47,0,0,8
+state	1	2

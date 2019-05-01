@@ -1,0 +1,3 @@
+pane	0	0	:nnn	1	:*	0	:/home/thecsw	1	nnn	:nnn
+window	0	0	1	:*	b33d,134x32,0,0,0
+state	0	

@@ -1,25 +1,27 @@
 ! urxvt
 URxvt*geometry:                80x40
 
-!URxvt*font: xft:Inconsolata:pixelsize=17:antialias=true:hinting=true
-URxvt*font: xft:Inconsolata:size=12
+URxvt*font: xft:Inconsolata:pixelsize=20:antialias=true:hinting=true
+!URxvt.font: xft:Inconsolata Nerd Font Complete Mono:size=10
+!URxvt.letterSpace: -1
+!URxvt*font: xft:Inconsolata:size=15
+
+!URxvt.cursorBlink: 1
+URxvt.cursorUnderline: 1
 
 URxvt.secondaryScroll: 0
-
+urxvt*blurRadius: 	    1
 URxvt*depth:                24
-!URxvt*borderless: 	    1	    
-URxvt*scrollBar:            false	
+!URxvt*borderless: 	    1
+URxvt*scrollBar:            false
 URxvt*saveLines:  	    2000
-!URxvt.transparent:	    true
-URxvt*.shading: 	    10
+URxvt.transparent:	    true
+URxvt*.shading:             30
 URxvt*skipBuiltinGlyphs:    true
-
-!urxvt*blurRadius: 	    10
-
 ! Meta modifier for keybindings
 !URxvt.modifier: super
 
-URxvt.perl-ext-common:  resize-font
+URxvt.perl-ext-common:  resize-font,ibeamcursor
 
 !! perl extensions
 URxvt.perl-ext:             default,url-select,clipboard

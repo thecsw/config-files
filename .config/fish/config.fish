@@ -73,4 +73,3 @@ alias p "cat"
 # git shortcuts
 alias gco "git checkout"
 alias gb "git branch"
-
