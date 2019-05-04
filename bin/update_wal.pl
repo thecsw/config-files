@@ -22,8 +22,6 @@ print 'Setting up the wal colorscheme...';
 system("wal -q -i $file_name");
 print " \033[1;32mDONE.\033[0m\n";
 
-print $wall_file;
-
 # Updating the i3 config to autoload wall image
 print 'Updating the i3 config to autoload wall image...';
 system("sed 's|\-i .*|\-i $wall_file\"|g' -i ~/.config/i3/config");
