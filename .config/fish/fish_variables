@@ -1,6 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export CONFBIN:/home/thecsw/gits/config\x2dfiles/
 SETUVAR --export EDITOR:emacsclient\x20\x2dnw
+SETUVAR --export --path GOPATH:/home/thecsw/go
+SETUVAR --export NNN_OPENER:mimeopen
 SETUVAR --export NNN_USE_EDITOR:1
 SETUVAR --export PAGER:less
 SETUVAR --export SHELL:urxvt
@@ -8,6 +11,23 @@ SETUVAR --export TERMINAL:urxvt
 SETUVAR THEME_EDEN_PROMPT_CHAR:\u00bb
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR _fish_abbr_c:xclip
+SETUVAR _fish_abbr_cp:cp\x20\x2div
+SETUVAR _fish_abbr_gb:git\x20branch
+SETUVAR _fish_abbr_gco:git\x20checkout
+SETUVAR _fish_abbr_m:udevil\x20mount
+SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dv
+SETUVAR _fish_abbr_mv:mv\x20\x2div
+SETUVAR _fish_abbr_p:cat
+SETUVAR _fish_abbr_rm:rm\x20\x2dIv
+SETUVAR _fish_abbr_sm:sc\x2dim
+SETUVAR _fish_abbr_um:udevil\x20umount
+SETUVAR _fish_abbr_v:xclip\x20\x2do
+SETUVAR _fish_abbr_wm:wicd\x2dcurses
+SETUVAR _fish_abbr_youtube_2D_download:youtube\x2ddl\x20\x2df\x20\x27\x28bestvideo\x2bbestaudio\x29\x5bprotocol\x5e\x3dhttp\x5d\x27\x20\x2do\x20\x27\x25\x28title\x29s\x2e\x25\x28ext\x29s\x27\x20\x2d\x2dignore\x2derrors
+SETUVAR _fish_abbr_youtube_2D_get:youtube\x2ddl\x20\x2d\x2dget\x2dfilename\x20\x2do\x20\x27\x25\x28title\x29s\x2e\x25\x28ext\x29s\x27\x20\x2d\x2drestrict\x2dfilename\x20\x2d\x2dignore\x2derrors
+SETUVAR _fish_abbr_youtube_2D_mp3:youtube\x2ddl\x20\x2df\x20\x27\x28bestaudio\x29\x5bprotocol\x5e\x3dhttp\x5d\x27\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20mp3\x20\x2do\x20\x27\x25\x28title\x29s\x2e\x25\x28ext\x29s\x27\x20\x2d\x2dignore\x2derrors
+SETUVAR _fish_abbr_youtube_2D_playlist:youtube\x2ddl\x20\x2df\x20\x27\x28bestaudio\x29\x5bprotocol\x5e\x3dhttp\x5d\x27\x20\x2d\x2dextract\x2daudio\x20\x2d\x2daudio\x2dformat\x20mp3\x20\x2do\x20\x27\x25\x28title\x29s\x2e\x25\x28ext\x29s\x27
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:5f87ff

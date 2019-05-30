@@ -1,1 +1,1 @@
-/home/thecsw/.local/share/omf/themes/sushi/fish_prompt.fish
+/home/thecsw/.local/share/omf/themes/l/fish_prompt.fish
