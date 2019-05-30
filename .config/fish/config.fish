@@ -28,9 +28,10 @@ function lcd
     cd $argv; and ls
 end
 
-# acme
+# # acme
 function acme
-    p9_acme -f ~/.config/fonts/Inconsolata/font $argv &;disown
+    acme_t -f  /media/sda-usb-Generic-_SD_MMC_/gits/plan9port/font/lucm/euro.9.font $argv &;disown
+#     #p9_acme -f ~/.config/fonts/euro.9.font $argv &;disown
 end
 
 # Playing movies and videos in tty
