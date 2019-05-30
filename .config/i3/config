@@ -222,8 +222,8 @@ bar {
 }
 
 # Some things to do on startup
-#exec --no-startup-id "udevil mount /dev/sda"
-exec --no-startup-id "wal -q -i ~/.config/wallpapers/glenda_1.png"
+exec --no-startup-id "udevil mount /dev/sda"
+exec --no-startup-id "wal -q -i ~/.config/wallpapers/nqrypug-imgur.jpg"
 
 exec --no-startup-id "compton"
 
